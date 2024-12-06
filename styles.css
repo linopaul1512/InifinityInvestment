@@ -2,17 +2,19 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    
 }  
 
 /* Navegación */
 .navbar {
     display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
     justify-content: space-between;
     align-items: center;
-    background-color:rgb(130, 0, 0) ;
-    padding: 10px 20px;
+    background-color: rgb(130, 0, 0);
+    padding: 10px 0; 
     color: rgb(255, 255, 255);
+    overflow: hidden; /* Previene desbordes */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
 }
 
 .navbar .logo {
@@ -22,6 +24,7 @@ body {
 .navbar .menu {
     list-style: none;
     display: flex;
+    flex-wrap: wrap; /* Ajusta los elementos a nuevas líneas si es necesario */
     gap: 15px;
     margin: 0;
     padding: 0;
@@ -29,16 +32,21 @@ body {
 
 .navbar .menu li {
     display: inline;
+    white-space: nowrap; /* Evita que los textos largos se dividan */
 }
 
 .navbar .menu a {
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgb(130, 0, 0); /* Fondo uniforme */
+    border-radius: 5px;
 }
 
 .navbar .menu a:hover {
     text-decoration: underline;
+    background-color: rgb(170, 0, 0); /* Cambia el color al pasar el ratón */
 }
 
 /* Banner */
@@ -80,8 +88,8 @@ body {
 
 /* Sección ¿Quiénes somos? */
 .quienes-somos-container {
-    width: 100%;  /* Ancho completo */
-    background-color: #f4f1e1;  /* Fondo cremoso */
+    width: 100%;
+    background-color: #f4f1e1;
     padding: 40px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -100,17 +108,16 @@ body {
     margin-bottom: 20px;
 }
 
-/* Opcional: para hacer un borde más decorativo */
 .quienes-somos-container::before {
     content: "";
     display: block;
     width: 60px;
     height: 5px;
-    background-color: rgb(130, 0, 0);  /* Color de la barra superior */
+    background-color: rgb(130, 0, 0);
     margin: 0 auto 20px auto;
 }
 
-/* Misión y Visión - Contenedores separados */
+/* Misión y Visión */
 .mision-vision-container {
     display: flex;
     justify-content: space-around;
@@ -119,7 +126,7 @@ body {
 }
 
 .mision-vision-cuadro {
-    width: 30%;  /* Cambié el ancho para que sea más pequeño */
+    width: 30%;
     padding: 20px;
     background-color: #f4f1e1;
     border: 2px solid #ccc;
@@ -136,16 +143,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* Orden de los elementos para la disposición en zig zag */
-.mision-vision-cuadro.left {
-    order: 1;
-}
-
-.mision-vision-cuadro.right {
-    order: 2;
-}
-
-/* Servicios - Contenedores de imágenes */
+/* Servicios */
 .servicios-container {
     display: flex;
     flex-wrap: wrap;
@@ -161,8 +159,8 @@ body {
 
 .servicio img {
     width: 100%;
-    height: 200px;  /* Ajusta la altura a un valor fijo */
-    object-fit: cover;  /* Asegura que la imagen se recorte sin distorsión */
+    height: 200px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -171,86 +169,12 @@ body {
     font-size: 1.2rem;
 }
 
-/* Estilos para la sección de contacto */
-.contact-section {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-}
-
-.contact-section h2 {
-    font-size: 2rem;
-    color: rgb(130, 0, 0);
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form label {
-    font-weight: bold;
-    color: #555;
-    align-self: flex-start;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: rgb(130, 0, 0);
-    box-shadow: 0 0 8px rgba(130, 0, 0, 0.5);
-    outline: none;
-}
-
-.contact-form button {
-    padding: 12px 25px;
-    background-color: rgb(130, 0, 0);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form button:hover {
-    background-color: rgb(100, 0, 0);
-    transform: translateY(-3px);
-}
-
-.contact-form button:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 /* Pie de página */
 .footer-content {
     text-align: center;
     background-color: rgb(130, 0, 0);
     color: white;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .footer-content a {
@@ -261,9 +185,9 @@ body {
 
 .footer-content a:hover {
     text-decoration: underline;
-} 
+}
 
-/* Tamaño mediano */
+/* Responsivo */
 @media (max-width: 768px) {
     .banner h1 {
         font-size: 2rem;
@@ -281,16 +205,33 @@ body {
         font-size: 1rem;
     }
 
+    .quienes-somos-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .quienes-somos-container p {
+        font-size: 1rem;
+    }
+
+    .mision-vision-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .mision-vision-cuadro {
-        width: 90%; /* Ajusta al ancho completo */
+        width: 80%;
+    }
+
+    .servicios-container {
+        flex-direction: column;
+        align-items: center;
     }
 
     .servicio {
-        width: 90%;
+        width: 80%;
     }
 }
 
-/* Tamaño pequeño */
 @media (max-width: 480px) {
     .banner h1 {
         font-size: 1.5rem;
@@ -305,10 +246,22 @@ body {
     }
 
     .section p {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
-    .servicio img {
-        height: auto; /* Ajusta la altura automáticamente */
+    .quienes-somos-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .quienes-somos-container p {
+        font-size: 1rem;
+    }
+
+    .mision-vision-cuadro {
+        width: 90%;
+    }
+
+    .servicio {
+        width: 90%;
     }
 }
