@@ -254,19 +254,30 @@ footer {
     text-align: center;
 }
 
-/* Sticker WhatsApp */
-.whatsapp-icon {
-    width: 50px;
-    height: 50px;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 50%;
-    background-color: #25D366;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+/* Estilos generales para el botón */
+#email-button {
+    position: fixed; /* Lo mantiene fijo en la pantalla */
+    bottom: 20px; /* Espaciado desde el fondo de la página */
+    right: 20px; /* Espaciado desde la derecha */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Alto del botón */
+    background-image: url('images/email.png'); /* Ruta de la imagen */
+    background-size: cover; /* La imagen cubre todo el botón */
+    background-position: center; /* Centra la imagen */
+    border-radius: 50%; /* Hace que el botón sea redondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones para efectos */
 }
 
-.whatsapp-icon:hover {
-    opacity: 0.8;
+#email-button:hover {
+    transform: scale(1.1); /* Agranda el botón ligeramente cuando el mouse pasa sobre él */
+    opacity: 0.9; /* Reduce la opacidad al pasar el mouse */
 }
+
+#contacto {
+    z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
+}
+
