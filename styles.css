@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004080;
+    background-color:rgb(130, 0, 0) ;
     padding: 10px 20px;
     color: rgb(255, 255, 255);
 }
@@ -46,7 +46,7 @@ body {
 .banner {
     background: url('images/teamwork-3309829_1280.jpg') no-repeat center center/cover;
     height: 50vh;
-    color: rgb(62, 64, 175);
+    color: rgb(130, 0, 0);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -107,7 +107,7 @@ body {
     display: block;
     width: 60px;
     height: 5px;
-    background-color: #004080;  /* Color de la barra superior */
+    background-color: rgb(130, 0, 0);  /* Color de la barra superior */
     margin: 0 auto 20px auto;
 }
 
@@ -174,7 +174,7 @@ body {
 
 /* Pie de página */
 footer {
-    background-color: #004080;
+    background-color: rgb(130, 0, 0);
     color: white;
     padding: 20px;
 }
