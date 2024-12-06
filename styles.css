@@ -1,10 +1,9 @@
-/* General */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
+    
+}  
 
 /* Navegación */
 .navbar {
@@ -17,7 +16,7 @@ body {
 }
 
 .navbar .logo {
-    height: 50px;
+    height: 100px;
 }
 
 .navbar .menu {
@@ -44,7 +43,7 @@ body {
 
 /* Banner */
 .banner {
-    background: url('images/banner.png') no-repeat center center/cover;
+    background: url('images/banner.jpg') no-repeat center center/cover;
     height: 50vh;
     color: rgb(130, 0, 0);
     text-align: center;
@@ -247,37 +246,69 @@ body {
 }
 
 /* Pie de página */
-footer {
+.footer-content {
+    text-align: center;
     background-color: rgb(130, 0, 0);
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 10px;
 }
 
-
-/* Estilos generales para el botón */
-#email-button {
-    position: fixed; /* Lo mantiene fijo en la pantalla */
-    bottom: 20px; /* Espaciado desde el fondo de la página */
-    right: 20px; /* Espaciado desde la derecha */
-    width: 60px; /* Ancho del botón */
-    height: 60px; /* Alto del botón */
-    background-image: url('images/email.png'); /* Ruta de la imagen */
-    background-size: cover; /* La imagen cubre todo el botón */
-    background-position: center; /* Centra la imagen */
-    border-radius: 50%; /* Hace que el botón sea redondo */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones para efectos */
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-#email-button:hover {
-    transform: scale(1.1); /* Agranda el botón ligeramente cuando el mouse pasa sobre él */
-    opacity: 0.9; /* Reduce la opacidad al pasar el mouse */
+.footer-content a:hover {
+    text-decoration: underline;
+} 
+
+/* Tamaño mediano */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1.2rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .mision-vision-cuadro {
+        width: 90%; /* Ajusta al ancho completo */
+    }
+
+    .servicio {
+        width: 90%;
+    }
 }
 
-#contacto {
-    z-index: 999; /* Asegura que el botón esté por encima de otros elementos */
-}
+/* Tamaño pequeño */
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 1.5rem;
+    }
 
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p {
+        font-size: 0.9rem;
+    }
+
+    .servicio img {
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+}
