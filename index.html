@@ -21,16 +21,34 @@
     </header>
 
     <!-- Banner -->
-    <section class="banner">
-        <h1>Bienvenido a Infinity Investment</h1>
-        <p>Tu socio confiable en inversiones.</p>
+    <section class="banner-carousel">
+        <div class="carousel">
+            <div class="carousel-slide active" style="background-image: url('images/Miami.png');">
+                <h1>Infinity Investment</h1>
+                <p>Tu socio confiable en inversiones.</p>
+            </div>
+            <div class="carousel-slide" style="background-image: url('images/newyork.jpg');">
+                <h1>Creando oportunidades</h1>
+                <p>Inversiones inteligentes para el futuro.</p>
+            </div>
+            <div class="carousel-slide" style="background-image: url('images/sanfrancisco.png');">
+                <h1>Un futuro seguro</h1>
+                <p>Tu camino hacia el éxito financiero.</p>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
     </section>
+    
 
     <!-- Sección: Quiénes somos -->
     <section id="quienes-somos" class="quienes-somos-container">
         <h2>¿Quiénes somos?</h2>
-        <p>Somos una empresa comprometida con el bienestar y el desarrollo de nuestros clientes. Nos especializamos en ofrecer soluciones innovadoras y asesoramiento personalizado en el ámbito de las inversiones, con el objetivo de ayudar a nuestros clientes a alcanzar sus metas financieras.</p>
-        <p>Con un equipo altamente capacitado y con una visión de futuro, trabajamos para brindarles las mejores opciones en el mundo de las finanzas.</p>
+        <p>Somos una empresa administradora de propiedades con años de experiencia en el mercado inmobiliario de Estados Unidos. Nos especializamos en brindar soluciones integrales a propietarios
+        que, viviendo fuera del país, necesitan una gestión eficiente, confiable y profesional de sus bienes inmuebles. Ofrecemos servicios de administración de alquileres, pago de impuestos, asesoría legal
+        en el área inmobiliaria, y protección y seguridad en arrendamientos. Nuestro compromiso es garantizar la tranquilidad de nuestros clientes, cuidando sus propiedades como si fueran nuestras.</p>
     </section>
     <!-- Sección: Misión y Visión -->
     <section id="mision-vision" class="section">
@@ -38,13 +56,13 @@
             <!-- Contenedor Misión -->
             <div class="mision-vision-cuadro left">
                 <h2>Misión</h2>
-                <p>Brindar asesoría de calidad, soluciones innovadoras y seguras en el campo de las inversiones, ayudando a nuestros clientes a alcanzar sus metas financieras.</p>
+                <p>Facilitar a nuestros clientes la gestión de sus propiedades en Estados Unidos, asegurando un manejo profesional, ético y eficiente. Nos enfocamos en maximizar el valor de sus bienes inmuebles, brindando servicios personalizados de administración, asesoría legal y protección en arrendamientos. Nuestro propósito es ser el puente confiable entre los propietarios y sus inversiones.</p>
             </div>
     
             <!-- Contenedor Visión -->
             <div class="mision-vision-cuadro right">
                 <h2>Visión</h2>
-                <p>Ser la empresa líder en asesoramiento y soluciones de inversión, destacándonos por nuestra integridad, innovación y compromiso con el éxito de nuestros clientes.</p>
+                <p>Ser la empresa líder en administración de propiedades para clientes internacionales, reconocida por nuestra excelencia operativa, innovación en servicios inmobiliarios y enfoque en la satisfacción del cliente. Aspiramos a establecer un estándar de calidad que inspire confianza y tranquilidad en los propietarios de bienes inmuebles en los Estados Unidos.</p>
             </div>
         </div>
     </section>
@@ -54,37 +72,57 @@
         <h2>Servicios</h2>
         <div class="servicios-container">
             <div class="servicio">
-                <img src="images/portafolio.png" alt="Gestión de portafolios">
-                <h3>Gestión de portafolios</h3>
+                <img src="images/asesorialegal.png" alt="Gestión de portafolios" class="imagen-servicio">
+                <h3>Asesoría legal</h3>
             </div>
             <div class="servicio">
-                <img src="images/asesoria.png" alt="Asesoría">
-                <h3>Asesoría</h3>
+                <img src="images/taxes.png" alt="Asesoría" class="imagen-servicio">
+                <h3>Taxes de propiedades</h3>
             </div>
             <div class="servicio">
-                <img src="images/inversiones.png" alt="Inversiones">
-                <h3>Inversiones</h3>
+                <img src="images/administracion.png" alt="Inversiones" class="imagen-servicio">
+                <h3>Administración de propiedades</h3>
             </div>
             <div class="servicio">
-                <img src="images/planificacion.png" alt="Planificación patrimonial">
-                <h3>Planificación</h3>
-            </div>
-            <div class="servicio">
-                <img src="images/capitalderiesgo.png" alt="Capital de riesgo">
-                <h3>Capital de riesgo</h3>
+                <img src="images/proteccion.png" alt="Planificación patrimonial" class="imagen-servicio">
+                <h3>Protección y seguridad de arrendatarios</h3>
             </div>
         </div>
     </section>
 
+    <!-- Sección: Formulario de contacto -->
+    <section id="contacto" class="section">
+        <h2>Contáctanos</h2>
+        <form id="contact-form" class="contact-form" action="https://api.emailjs.com/api/v1.0/email/send" method="POST">
+            <label for="first-name">Nombre:</label>
+            <input type="text" id="first-name" name="first-name" required>
 
-<!-- Pie de página -->
-<footer>
-    <div class="footer-content">
-        <p>&#169; 2024 Infinity Investment</p>
-        <p><a href="mailto:infinityinvestment@gmail.com">infinityinvestment@gmail.com</a></p>
-    </div>
-</footer>
+            <label for="last-name">Apellido:</label>
+            <input type="text" id="last-name" name="last-name" required>
 
- 
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+        
+            <label for="subject">Asunto:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <p>&#169; 2024 Infinity Investment</p>
+            <p><a href="mailto:infinityinvestment@gmail.com">infinityinvestment@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
 </body>
+    
 </html>

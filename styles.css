@@ -7,14 +7,14 @@ body {
 /* Navegación */
 .navbar {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
     background-color: rgb(130, 0, 0);
     padding: 10px 0; 
     color: rgb(255, 255, 255);
-    overflow: hidden; /* Previene desbordes */
-    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    overflow: hidden;
+    box-sizing: border-box; 
 }
 
 .navbar .logo {
@@ -24,7 +24,7 @@ body {
 .navbar .menu {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /* Ajusta los elementos a nuevas líneas si es necesario */
+    flex-wrap: wrap; 
     gap: 15px;
     margin: 0;
     padding: 0;
@@ -32,7 +32,7 @@ body {
 
 .navbar .menu li {
     display: inline;
-    white-space: nowrap; /* Evita que los textos largos se dividan */
+    white-space: nowrap; 
 }
 
 .navbar .menu a {
@@ -40,36 +40,81 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding: 5px 10px;
-    background-color: rgb(130, 0, 0); /* Fondo uniforme */
+    background-color: rgb(130, 0, 0);
     border-radius: 5px;
 }
 
 .navbar .menu a:hover {
     text-decoration: underline;
-    background-color: rgb(170, 0, 0); /* Cambia el color al pasar el ratón */
+    background-color: rgb(170, 0, 0);
 }
 
 /* Banner */
-.banner {
-    background: url('images/banner.jpg') no-repeat center center/cover;
+/* Carrusel */
+.banner-carousel {
+    position: relative;
+    overflow: hidden;
     height: 50vh;
-    color: rgb(130, 0, 0);
-    text-align: center;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 20px;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: #820008
+    
 }
 
-.banner h1 {
-    font-size: 3rem;
-    margin: 0;
+.carousel-slide h1,
+.carousel-slide p {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente */
+    color: white; /* Asegura que el texto sea legible */
+    padding: 10px 20px;
+    border-radius: 5px; /* Opcional: bordes redondeados */
+    display: inline-block; /* Hace que el fondo abarque solo el texto */
 }
 
-.banner p {
+.carousel-slide p {
     font-size: 1.5rem;
     margin-top: 10px;
 }
+
+/* Controles */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.carousel-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
 
 /* Secciones */
 .section {
@@ -88,14 +133,16 @@ body {
 
 /* Sección ¿Quiénes somos? */
 .quienes-somos-container {
-    width: 100%;
+    width: 60%; 
+    max-width: 900px; 
     background-color: #f4f1e1;
     padding: 40px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 8px;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px auto; 
+    word-wrap: break-word; 
 }
 
 .quienes-somos-container h2 {
@@ -105,7 +152,7 @@ body {
 
 .quienes-somos-container p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .quienes-somos-container::before {
@@ -143,6 +190,7 @@ body {
     font-size: 1.2rem;
 }
 
+
 /* Servicios */
 .servicios-container {
     display: flex;
@@ -155,6 +203,7 @@ body {
 .servicio {
     width: 200px;
     text-align: center;
+    transition: transform 0.3s ease; /* Transición para el agrandamiento */
 }
 
 .servicio img {
@@ -162,11 +211,57 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
+    transition: transform 0.3s ease; /* Transición para agrandar la imagen */
+}
+
+.servicio img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen */
 }
 
 .servicio h3 {
     margin-top: 10px;
     font-size: 1.2rem;
+}
+
+
+/* Contactos */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f1e1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 12px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #820008;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #a00000;
 }
 
 /* Pie de página */
@@ -185,4 +280,98 @@ body {
 
 .footer-content a:hover {
     text-decoration: underline;
+}
+
+/* Estilo para la sección de contacto en el pie de página */
+.contacto-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px;
+    background-color: #f4f1e1;
+}
+
+.contacto-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacto-lista li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contacto-lista a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.contacto-lista img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-btn img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Definir la animación fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar la animación a las secciones */
+
+
+.quienes-somos-container {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.mision-vision-container {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 2s; 
+}
+
+.servicios-container {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 3s;
+}
+
+/*Animación de opacacidad de las fotos de servicios*/
+.imagen-servicio {
+    transition: opacity 0.3s ease; 
+    width: 100%;
+    height: auto; 
+}
+
+.imagen-servicio:hover {
+    opacity: 0.7; /* Reduce la opacidad al pasar el cursor */
 }
